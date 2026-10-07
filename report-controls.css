@@ -28,3 +28,146 @@
     padding: 7px 17px;
   }
 }
+
+.conclusion-section > p:first-of-type {
+  font-size: 18px;
+  color: #4e6259;
+}
+
+.score-key {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  gap: 16px;
+  max-width: 960px;
+  padding: 18px 20px;
+  margin: 28px 0;
+  background: #e9ede4;
+  border-left: 3px solid #bd8d47;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4e6259;
+}
+
+.score-key strong {
+  color: #19352f;
+}
+
+.score-table-scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  border: 1px solid #d6ddd5;
+  background: #fffefa;
+}
+
+.score-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.score-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.score-table th,
+.score-table td {
+  padding: 15px 16px;
+  border-bottom: 1px solid #dfe5dc;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.score-table thead th {
+  background: #203c36;
+  color: #fff;
+  font-weight: 600;
+}
+
+.score-table tbody th,
+.score-table tfoot th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.score-table tbody td:nth-child(2),
+.score-table tbody td:nth-child(3),
+.score-table tbody td:nth-child(4),
+.score-table tfoot td:nth-child(2),
+.score-table tfoot td:nth-child(3),
+.score-table tfoot td:nth-child(4) {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-table td:last-child {
+  width: 42%;
+  color: #4f6258;
+}
+
+.score-table .score-best {
+  background: #e8efe6;
+  color: #173d2e;
+  font-weight: 700;
+}
+
+.score-table tfoot th,
+.score-table tfoot td {
+  border-bottom: 0;
+  background: #f0f2eb;
+  font-weight: 700;
+}
+
+.score-table tfoot .score-best {
+  background: #d7e7d8;
+}
+
+.score-note {
+  max-width: 930px !important;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #66786e !important;
+}
+
+.table-swipe-hint {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .score-key {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .table-swipe-hint {
+    display: block;
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: #617168;
+  }
+
+  .score-table thead th:first-child,
+  .score-table tbody th,
+  .score-table tfoot th {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: #fffefa;
+  }
+
+  .score-table thead th:first-child {
+    background: #203c36;
+  }
+
+  .score-table tfoot th {
+    background: #f0f2eb;
+  }
+}
