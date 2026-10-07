@@ -17,7 +17,7 @@ const list = document.getElementById('comparison-list');
 
 function imageLink(file, alt, eager = false) {
   const url = base + file;
-  return `<a class="image-link" href="${url}" target="_blank" rel="noopener" aria-label="開啟原尺寸：${alt}"><img src="${url}" alt="${alt}" loading="${eager ? 'eager' : 'lazy'}"><span class="expand-hint">檢視原圖 ↗</span></a>`;
+  return `<button type="button" class="image-link" data-full-image="${url}" aria-label="放大圖片：${alt}"><img src="${url}" alt="${alt}" loading="${eager ? 'eager' : 'lazy'}"><span class="expand-hint" aria-hidden="true">放大檢視 ⤢</span></button>`;
 }
 
 function render(mode) {
@@ -44,3 +44,29 @@ document.querySelectorAll('.mode-switch button').forEach(button => {
   });
 });
 render('clay');
+
+const dialog = document.getElementById('image-dialog');
+const dialogImage = document.getElementById('image-dialog-image');
+const dialogCaption = document.getElementById('image-dialog-caption');
+let imageTrigger = null;
+
+list.addEventListener('click', event => {
+  const trigger = event.target.closest('[data-full-image]');
+  if (!trigger) return;
+  imageTrigger = trigger;
+  dialogImage.src = trigger.dataset.fullImage;
+  dialogImage.alt = trigger.querySelector('img').alt;
+  dialogCaption.textContent = dialogImage.alt;
+  document.body.classList.add('dialog-open');
+  dialog.showModal();
+});
+
+dialog.querySelector('.image-dialog-close').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', event => {
+  if (event.target === dialog) dialog.close();
+});
+dialog.addEventListener('close', () => {
+  document.body.classList.remove('dialog-open');
+  dialogImage.removeAttribute('src');
+  imageTrigger?.focus();
+});
