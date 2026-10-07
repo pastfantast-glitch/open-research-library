@@ -50,15 +50,9 @@
 .b8-theme .section-num { color: var(--b8-accent); }
 .b8-theme .eyebrow-line { background: var(--b8-accent); }
 
-.b8-theme .catalog-intro {
-  min-height: 510px;
-  padding-top: 90px;
-  background: radial-gradient(circle at 81% 34%, #38434a 0, #202c35 35%, #141d25 70%);
-}
-
-.b8-theme .catalog-intro h1,
 .b8-theme .report-heading h1,
 .b8-theme .article-section h2,
+.b8-theme .section-heading h1,
 .b8-theme .section-heading h2,
 .b8-theme .report-card h3,
 .b8-theme .method-note h2,
@@ -68,14 +62,10 @@
   letter-spacing: -.045em;
 }
 
-.b8-theme .catalog-intro h1 em,
 .b8-theme .report-heading h1 em { color: var(--b8-accent); }
-.b8-theme .catalog-intro > p,
-.b8-theme .catalog-meta,
-.b8-theme .catalog-meta strong,
 .b8-theme .listing-count { color: var(--b8-muted); }
-.b8-theme .catalog-meta { border-color: var(--b8-border); }
-.b8-theme .listing { padding-top: 44px; }
+.b8-theme .listing { padding-top: 48px; }
+.b8-theme .section-heading h1 { font-size: 36px; margin: 5px 0 0; }
 .b8-theme .report-card,
 .b8-theme .method-note {
   background: var(--b8-panel);
@@ -300,7 +290,7 @@
 }
 
 @media (max-width: 600px) {
-  .b8-theme .catalog-intro { padding-top: 60px; }
+  .b8-theme .section-heading h1 { font-size: 31px; }
   .b8-theme .report-page { padding: 0 16px 60px; }
   .b8-theme .report-heading { margin-top: 16px; padding: 22px 20px; }
   .b8-theme .back-link { margin-bottom: 25px; }
