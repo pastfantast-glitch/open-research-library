@@ -20,30 +20,45 @@ function imageLink(file, alt, eager = false) {
   return `<button type="button" class="image-link" data-full-image="${url}" aria-label="放大圖片：${alt}"><img src="${url}" alt="${alt}" loading="${eager ? 'eager' : 'lazy'}"><span class="expand-hint" aria-hidden="true">放大檢視 ⤢</span></button>`;
 }
 
-function render(mode) {
+function render() {
   list.innerHTML = cases.map((item, index) => `
     <section class="case-study" id="case-${item.slug}" aria-labelledby="title-${item.slug}">
-      <div class="case-topline"><span>CASE ${String(index + 1).padStart(2,'0')} / 06</span><span>${mode === 'clay' ? '白模比較' : '貼圖比較'}</span></div>
-      <h3 id="title-${item.slug}">${item.title}</h3>
+      <div class="case-topline"><span>CASE ${String(index + 1).padStart(2,'0')} / 06</span><span class="case-current-mode">白模比較</span></div>
+      <div class="case-heading-row"><h3 id="title-${item.slug}">${item.title}</h3><div class="mode-switch case-mode-switch" role="group" aria-label="${item.title}結果呈現模式"><button type="button" class="active" data-mode="clay" aria-pressed="true">白模</button><button type="button" data-mode="texture" aria-pressed="false">貼圖</button></div></div>
       <div class="comparison-grid">
         <figure class="reference-figure"><figcaption>參考圖</figcaption>${imageLink(item.reference, `${item.title}參考圖：${item.alt}`, index === 0)}</figure>
-        ${models.map(model => `<figure><figcaption>${model.label}</figcaption>${imageLink(`${item.slug}-${model.slug}-${mode}.png`, `${item.title}，${model.label}，${mode === 'clay' ? '白模' : '貼圖'}結果`)}</figure>`).join('')}
+        ${models.map(model => `<figure data-model="${model.slug}"><figcaption>${model.label}</figcaption>${imageLink(`${item.slug}-${model.slug}-clay.png`, `${item.title}，${model.label}，白模結果`)}</figure>`).join('')}
       </div>
       <p class="case-observation"><span>圖像觀察</span>${item.observation}</p>
     </section>`).join('');
 }
 
-document.querySelectorAll('.mode-switch button').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.mode-switch button').forEach(item => {
-      const active = item === button;
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-pressed', String(active));
-    });
-    render(button.dataset.mode);
+render();
+
+list.addEventListener('click', event => {
+  const button = event.target.closest('.case-mode-switch button');
+  if (!button) return;
+  const section = button.closest('.case-study');
+  const item = cases.find(entry => section.id === `case-${entry.slug}`);
+  const mode = button.dataset.mode;
+  section.querySelectorAll('.case-mode-switch button').forEach(option => {
+    const active = option === button;
+    option.classList.toggle('active', active);
+    option.setAttribute('aria-pressed', String(active));
+  });
+  section.querySelector('.case-current-mode').textContent = mode === 'clay' ? '白模比較' : '貼圖比較';
+  section.querySelectorAll('[data-model]').forEach(figure => {
+    const model = models.find(entry => entry.slug === figure.dataset.model);
+    const url = `${base}${item.slug}-${model.slug}-${mode}.png`;
+    const alt = `${item.title}，${model.label}，${mode === 'clay' ? '白模' : '貼圖'}結果`;
+    const image = figure.querySelector('img');
+    image.src = url;
+    image.alt = alt;
+    const trigger = figure.querySelector('[data-full-image]');
+    trigger.dataset.fullImage = url;
+    trigger.setAttribute('aria-label', `放大圖片：${alt}`);
   });
 });
-render('clay');
 
 const dialog = document.getElementById('image-dialog');
 const dialogImage = document.getElementById('image-dialog-image');

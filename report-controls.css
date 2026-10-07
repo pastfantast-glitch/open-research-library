@@ -1,0 +1,30 @@
+.case-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 6px 0 20px;
+}
+
+.case-heading-row h3 {
+  margin: 0;
+}
+
+.case-mode-switch {
+  margin: 0;
+}
+
+.case-mode-switch button {
+  padding: 7px 20px;
+}
+
+@media (max-width: 600px) {
+  .case-heading-row {
+    align-items: flex-start;
+  }
+
+  .case-mode-switch button {
+    padding: 7px 17px;
+  }
+}
