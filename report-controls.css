@@ -19,6 +19,43 @@
   padding: 7px 20px;
 }
 
+.case-assessment {
+  margin-top: 18px;
+  border-top: 1px solid #d6ddd5;
+}
+
+.case-assessment h4 {
+  margin: 18px 0 10px;
+  color: #19352f;
+  font-size: 16px;
+}
+
+.assessment-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid #e1e6df;
+  color: #4e6259;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.assessment-row strong {
+  color: #19352f;
+}
+
+.assessment-row p {
+  margin: 0;
+}
+
+.assessment-label {
+  display: inline-block;
+  margin-right: 8px;
+  color: #986a31;
+  font-weight: 700;
+}
+
 @media (max-width: 600px) {
   .case-heading-row {
     align-items: flex-start;
@@ -26,6 +63,11 @@
 
   .case-mode-switch button {
     padding: 7px 17px;
+  }
+
+  .assessment-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
   }
 }
 
