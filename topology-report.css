@@ -24,3 +24,5 @@
 @media print{.topology-report .wire-switch,.topology-report dialog{display:none}.topology-report .four{grid-template-columns:repeat(4,minmax(0,1fr))}.topology-report .article-section{break-before:page}}
 
 .topology-report .evaluation-list{padding-left:24px;max-width:1100px;color:var(--b8-muted)}.topology-report .evaluation-list li{margin-bottom:12px;padding-left:5px;line-height:1.9}.topology-report .evaluation-list li::marker{color:var(--b8-accent)}
+
+.topology-report .reference-gallery .image{height:300px}.topology-report .reference-gallery img{height:100%;object-fit:contain}.topology-report .reference-credit{font-size:13px;color:var(--b8-soft)}@media(max-width:600px){.topology-report .reference-gallery .image{height:220px}}
