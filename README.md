@@ -22,3 +22,12 @@
 ## 後續報告格式
 
 每篇報告應包含研究問題、資料與方法、觀察、限制、來源、更新日期。不要把尚未驗證的 AI 產出當成事實。
+
+## 第二份報告
+
+《Tripo 高模透過 AI 操作 Blender 進行角色頭部重拓補之研究》記錄原始高模、Tripo 內建重拓補與 V01–V04，共 59 張幾何與線框圖。
+
+- 報告：`reports/tripo-blender-retopology.html`
+- 圖片：`assets/head-retopology/`
+- 專用樣式／互動：`topology-report.css`、`topology-report.js`
+- 圖片由研究者 Blender 場景中的模型重繪；V04 採最後完成的 3,182 面狀態。
