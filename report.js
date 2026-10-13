@@ -87,27 +87,8 @@ list.addEventListener('click', event => {
 });
 
 const dialog = document.getElementById('image-dialog');
-const dialogImage = document.getElementById('image-dialog-image');
-const dialogCaption = document.getElementById('image-dialog-caption');
-let imageTrigger = null;
-
-list.addEventListener('click', event => {
-  const trigger = event.target.closest('[data-full-image]');
-  if (!trigger) return;
-  imageTrigger = trigger;
-  dialogImage.src = trigger.dataset.fullImage;
-  dialogImage.alt = trigger.querySelector('img').alt;
-  dialogCaption.textContent = dialogImage.alt;
-  document.body.classList.add('dialog-open');
-  dialog.showModal();
-});
-
-dialog.querySelector('.image-dialog-close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => {
-  if (event.target === dialog) dialog.close();
-});
-dialog.addEventListener('close', () => {
-  document.body.classList.remove('dialog-open');
-  dialogImage.removeAttribute('src');
-  imageTrigger?.focus();
+const viewer=window.createResearchLightbox(dialog,document.getElementById('image-dialog-image'),document.getElementById('image-dialog-caption'),dialog.querySelector('.image-dialog-close'));
+list.addEventListener('click',event=>{
+ const trigger=event.target.closest('[data-full-image]');
+ if(trigger)viewer.open(trigger.dataset.fullImage,trigger.querySelector('img').alt,trigger);
 });
