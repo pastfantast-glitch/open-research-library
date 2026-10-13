@@ -39,9 +39,11 @@ const models = [
 const base = '../assets/3d-comparison/';
 const list = document.getElementById('comparison-list');
 
+function previewImage(url) { return url.replace(/([^/]+)\.(png|jpg|webp)$/i, 'previews/$1.webp'); }
+
 function imageLink(file, alt, eager = false) {
   const url = base + file;
-  return `<button type="button" class="image-link" data-full-image="${url}" aria-label="放大圖片：${alt}"><img src="${url}" alt="${alt}" loading="${eager ? 'eager' : 'lazy'}"><span class="expand-hint" aria-hidden="true">放大檢視 ⤢</span></button>`;
+  return `<button type="button" class="image-link" data-full-image="${url}" aria-label="放大圖片：${alt}"><img decoding="async" src="${previewImage(url)}" alt="${alt}" loading="${eager ? 'eager' : 'lazy'}"><span class="expand-hint" aria-hidden="true">放大檢視 ⤢</span></button>`;
 }
 
 function render() {
@@ -76,7 +78,7 @@ list.addEventListener('click', event => {
     const url = `${base}${item.slug}-${model.slug}-${mode}.png`;
     const alt = `${item.title}，${model.label}，${mode === 'clay' ? '白模' : '貼圖'}結果`;
     const image = figure.querySelector('img');
-    image.src = url;
+    image.src = previewImage(url);
     image.alt = alt;
     const trigger = figure.querySelector('[data-full-image]');
     trigger.dataset.fullImage = url;
