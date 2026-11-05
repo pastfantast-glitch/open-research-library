@@ -1,5 +1,12 @@
 # 公開研究資料庫
 
+## 第三份報告
+
+《Charakuru 角色製作套件：安裝、使用流程與實測紀錄》整理 2026-11-05 的 Windows 環境建置、VRM format 4.10.4 安裝、瀏覽器排查與 MCP 分層驗證。未將尚未執行的角色生成或 VRM 匯出列為成果。
+
+- 報告：`reports/charakuru-installation-workflow.html`
+- 專用樣式：`charakuru-report.css`
+
 以可追溯的資料、明確的觀察與限制，公開研究報告。網站使用純靜態 HTML、CSS 和 JavaScript，可直接由 GitHub Pages 發佈。
 
 ## 第一份報告

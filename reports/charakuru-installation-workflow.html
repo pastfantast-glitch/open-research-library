@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111820"><meta name="description" content="Charakuru 1.1.1 在 Windows 的安裝與使用紀錄，包含 VRM 擴展、Tripo 瀏覽器與 Blender MCP 排查。"><title>Charakuru 安裝、使用流程與實測紀錄｜公開研究資料庫</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../theme-b8.css"><link rel="stylesheet" href="../charakuru-report.css"></head>
+<body class="b8-theme charakuru-report"><main class="report-page">
+<header class="report-heading"><a class="back-link" href="../">← 返回研究目錄</a><div class="eyebrow">REPORT 003 / INSTALLATION STUDY</div><h1>Charakuru 角色製作套件<br><em>安裝、使用流程與實測紀錄</em></h1><p class="report-deck">從本地應用啟動，到 VRM 擴展與 Blender MCP 連線，記錄 AI 角色製作環境的準備過程。</p><div class="byline"><span>紀錄日期：2026.11.05</span><span>Charakuru 1.1.1 · Windows</span><span>階段：環境建置</span></div></header>
+<nav class="report-toc" aria-label="報告章節"><a href="#scope">研究範圍</a><a href="#environment">環境版本</a><a href="#install">啟動方式</a><a href="#vrm">VRM 安裝</a><a href="#connection">連線排查</a><a href="#workflow">使用流程</a><a href="#findings">結論</a><a href="#sources">來源</a></nav>
+<div class="report-body">
+<section id="scope" class="article-section"><span class="section-num">01 / OVERVIEW</span><h2>研究目的與目前結論</h2>
+<p>本次從 Windows 實際部署出發，確認 Charakuru 能否作為「角色插畫 → AI 協作製作 → VRM」的工作入口，並記錄首次使用遇到的依賴、瀏覽器與 MCP 連線問題。</p>
+<p>Charakuru 將本地確認介面、製作腳本與 Agent Skills 整合在同一套件中。使用者負責設計選擇與視覺確認，Agent 串接圖片生成、Tripo 與 Blender。它可以組織製作流程，但啟動成功並不能證明成品品質或完整自動化能力。<a href="#sources">[1][2]</a></p>
+<div class="status-note"><strong>本次完成的是安裝與環境驗證。</strong><p>應用可啟動、VRM 擴展可載入、Tripo 頁面可讀取，Blender MCP 的 9876 埠可連線。目前聊天未暴露 Blender MCP 工具；角色圖片、模型候選、綁定與最終 VRM 尚未製作，不能記為全流程成功。</p></div></section>
+<section id="environment" class="article-section"><span class="section-num">02 / ENVIRONMENT</span><h2>實測環境與版本</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="環境驗證表，可水平捲動"><table><thead><tr><th>項目</th><th>本次狀態</th><th>驗證依據</th></tr></thead><tbody>
+<tr><td>作業環境</td><td>Windows、PowerShell、Codex 桌面應用</td><td>本機執行與操作紀錄</td></tr>
+<tr><td>Charakuru</td><td>1.1.1 配布套件</td><td>package.json；資料夾版本時間為 2026-11-02T09-36-05-842Z</td></tr>
+<tr><td>Node.js</td><td>22.16.0</td><td>node --version；符合套件需求</td></tr>
+<tr><td>Blender</td><td>5.2.2 LTS</td><td>背景執行與應用標題確認</td></tr>
+<tr><td>VRM format</td><td>4.10.4 已安裝並啟用</td><td>新背景程序確認材質擴展及 VRM 匯出介面存在</td></tr>
+<tr><td>Tripo</td><td>內置瀏覽器已登入</td><td>成功讀取帳戶積分與圖片轉 3D 介面；未執行付費生成</td></tr>
+<tr><td>Blender MCP</td><td>Blender 端已開啟</td><td>面板顯示 Connected on port 9876，直接 TCP 連線成功</td></tr>
+<tr><td>Agent 的 MCP 工具</td><td>尚未接通驗證</td><td>本聊天未列出 Blender MCP 工具，未完成協定層呼叫</td></tr>
+<tr><td>圖片生成</td><td>工具可用，尚未製作</td><td>已提供圖片生成能力；尚未提交角色生成請求</td></tr></tbody></table></div>
+<p>版本以本機套件與執行結果為準。官方 main 分支文件會持續更新，README 的版本徽章或下載範例不應覆蓋本機 package.json 的版本紀錄。</p></section>
+<section id="install" class="article-section"><span class="section-num">03 / INSTALLATION</span><h2>安裝與啟動方式</h2>
+<ol><li>由官方 <a href="https://github.com/nanocle/Charakuru/releases">Releases</a> 取得專用配布 ZIP，解壓至可寫入資料夾；不要以 GitHub 自動產生的 Source code ZIP 代替。</li>
+<li>確認根目錄有 <code>AGENTS.md</code>、<code>package.json</code>、<code>server.mjs</code>、<code>public/</code>、<code>scripts/</code>、<code>skills/</code>。本次也確認同捆素體 <code>assets/donor/weighted-body.blend</code> 存在。</li>
+<li>讓 Agent 讀取這一版的 <code>AGENTS.md</code>，再依製作階段閱讀 Skill。本次以簡體中文與 Agent 溝通；報告沿用網站的繁體中文。</li>
+<li>在套件根目錄啟動。標準配布套件無需先執行 <code>npm install</code>。<a href="#sources">[1][2]</a></li></ol>
+<pre><code>node --version
+# 先切換至含 package.json 的套件根目錄
+npm.cmd start</code></pre>
+<p>本次 Windows 使用 <code>npm.cmd start</code>，對應官方的 <code>npm start</code>。終端回傳：</p>
+<pre><code>AI Character Modeling Kit http://127.0.0.1:8766</code></pre>
+<p>再讀取首頁，確認 HTTP 200 且內容是 Charakuru。後續曾發生無法存取首頁，重新啟動後恢復 HTTP 200；當時未查明服務停止原因。使用期間需保持服務運行。若埠被占用，應檢查原服務或依套件規則改用其他埠，不要終止不明程序。</p>
+<p>應用語言可在 Settings → Language 設為簡體中文。此設定應在實際使用的瀏覽器內確認。</p></section>
+<section id="vrm" class="article-section"><span class="section-num">04 / VRM ADD-ON</span><h2>本次 VRM 擴展安裝紀錄</h2>
+<p>最初背景檢查找到 Blender 5.2.2 與已啟用的 MCP 擴展，但未找到 VRM 擴展。依使用者指示，從作者的官方 GitHub Release 下載 <code>VRM_Addon_for_Blender-Extension-4_10_4.zip</code>。<a href="https://github.com/saturday06/VRM-Addon-for-Blender/releases/tag/v4.10.4">[3]</a></p>
+<p>下載包的 manifest 宣告 Blender 兼容範圍為 <code>4.2.0 ≤ 版本 &lt; 5.3.0</code>，涵蓋本次的 5.2.2。下載最初遇到連線拒絕，取得工具所需網路執行權限後成功；這是當次執行環境的限制，不代表官方檔案不存在。</p>
+<p>以下是本次採用的安裝方式。請替換安裝包位置；Blender 路徑也需符合實際安裝位置。</p>
+<pre><code>&amp; 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe' --background --command extension install-file --repo user_default --enable 'C:\你的下載位置\VRM_Addon_for_Blender-Extension-4_10_4.zip'</code></pre>
+<p>程序回傳 <code>STATUS Installed "vrm"</code>。接著以新的 Blender 背景程序載入偏好設定，驗證結果如下：</p>
+<pre><code>module: bl_ext.user_default.vrm
+enabled: true
+material_extension: true
+export_operator: true</code></pre>
+<p>這證明擴展能自動載入，且材質擴展和 VRM 匯出 operator 已註冊；不等同於完成角色匯出測試。若 Blender 視窗在安裝前已開啟，需先儲存工作，再重啟以載入擴展。</p></section>
+<section id="connection" class="article-section"><span class="section-num">05 / CONNECTION</span><h2>瀏覽器與 MCP 排查經驗</h2>
+<h3>Chrome 登入與 Agent 可操作是兩件事</h3>
+<p>使用者最初在獨立 Chrome 登入 Tripo。Agent 能找到 Tripo 視窗，但電腦控制工具無法可靠辨識目前網址，因此停止操作。這證明控制通道受阻，不代表 Tripo 未登入。</p>
+<p>排查中也曾遇到內置瀏覽器技能檔缺失，以及預期檢查 Tripo 卻讀到 Charakuru 的情況。前者是工具可用性問題，後者是分頁選擇問題，都不能據此判定帳戶登入失敗。Chrome 官方擴展設定曾被列為可行路徑，但本次未驗證該路徑成功。</p>
+<p>後續由使用者選擇內置瀏覽器並登入 Tripo；工具更新後，Agent 成功綁定既有分頁、讀到帳戶積分與生成介面。此結果確認登入與頁面讀取；實際上傳、生成、匯出下載尚待驗證。Chrome 與內置瀏覽器使用不同的登入狀態，不能互相代替判斷。<a href="https://learn.chatgpt.com/docs/browser">[4]</a></p>
+<h3>修正 MCP 判斷：不能只靠一次埠查詢</h3>
+<p>最初查詢監聽埠未回傳結果，Agent 因此說 MCP 未開啟，這個判斷不夠充分。使用者表示已開啟後，重新查看 Blender 畫面，確認 <code>Connected on port 9876</code>，再直接測試 TCP 連線成功，將結論修正為「Blender 端已開啟」。</p>
+<div class="connection-levels"><div><b>1 · 擴展已啟用</b><p>Blender 能載入擴展，操作面板存在。</p></div><div><b>2 · 服務可連線</b><p>本次已通過 127.0.0.1:9876 的 TCP 連線測試。</p></div><div><b>3 · Agent 可呼叫</b><p>仍需 MCP 客戶端提供工具並成功執行查詢；本次尚未完成。</p></div></div>
+<p>目前不需要重新安裝 Blender MCP。後續應檢查 Agent 客戶端設定與工具清單，再以讀取場景等唯讀操作驗證完整鏈路。TCP 成功只能證明服務可達，不能取代 MCP 協定與工具呼叫測試。</p></section>
+<section id="workflow" class="article-section"><span class="section-num">06 / WORKFLOW</span><h2>從原圖到 VRM 的使用路徑</h2>
+<p>以下依本機 1.1.1 套件的 AGENTS.md 與中文教程整理，屬於預定操作流程，尚非本次生成成果。完整設定請對照官方教程。<a href="#sources">[1][2]</a></p>
+<ol class="workflow"><li><strong>原圖與部位圖</strong><p>匯入有權使用的全身圖。製作含髮頭部與 T 姿勢身體，各四方向，另製作全身三視圖供比例參考。</p></li>
+<li><strong>審查圖片與選擇模型</strong><p>確認設計一致後產生頭、身體各四個候選，分別選定。此階段涉及 Tripo 積分；本次沒有量測整個角色的製作成本。</p></li>
+<li><strong>材質與比例</strong><p>Agent 分割、分類、處理 UV 與貼圖後組裝；使用者檢查頭頸銜接及頭身比例。</p></li>
+<li><strong>綁定與物理</strong><p>依流程取得骨骼位置、傳遞權重，設定頭髮與服裝擺動，再執行技術檢查。</p></li>
+<li><strong>動作確認與保存</strong><p>使用者檢查變形與擺動，填寫模型名稱、作者及使用條件後匯出。保留 VRM、Blend 與完整專案資料夾。</p></li></ol>
+<h3>現在可以進行的第一步</h3>
+<ol><li>在 Charakuru 點擊 <strong>Load original illustration／載入原始插畫</strong>。</li><li>點擊 <strong>Request images／請求製作圖片</strong>。</li><li>點擊 <strong>Copy prompt／複製提示詞</strong>，將完整請求貼到聊天並送出；只複製不會開始製作。</li><li>保持發出請求的應用分頁開啟。Agent 使用請求中的 <code>agent-session.mjs begin</code> 儲存最新狀態，確認 <code>saved: true</code> 才開始。</li></ol>
+<p>不要自行拼湊 Request ID，也不要以舊請求代替目前狀態。圖片階段可以先開始；Blender MCP 的完整呼叫鏈應在 Blender 製作階段前完成。</p></section>
+<section id="findings" class="article-section"><span class="section-num">07 / FINDINGS</span><h2>實測結論與後續驗證</h2>
+<p>本次確認 Charakuru 能在這台 Windows 電腦啟動，VRM 擴展安裝可透過 Blender 命令行重現。設定上的主要摩擦來自跨工具銜接：瀏覽器登入、分頁選取、控制工具連線，以及 Blender 服務端和 Agent 客戶端之間的區別。</p>
+<p>較可靠的檢查方式是逐層驗證：HTTP 200 確認應用回應；頁面內容確認瀏覽器會話；新 Blender 程序確認擴展載入；TCP 確認服務可達；唯讀 MCP 呼叫才確認 Agent 能使用工具。不能把上一層成功當作下一層成功，也不能把一次查詢未回傳直接解讀為未安裝。</p>
+<h3>下一輪研究應記錄</h3><ul><li>完整角色從原圖到 VRM 的耗時、人工介入次數與積分變化。</li><li>多方向圖片一致性、候選模型背面與接縫品質。</li><li>肩肘髖膝變形、髮絲與服裝物理，以及匯出後材質表現。</li><li>MCP 場景讀取、Tripo 上傳下載、專案重開與成品回讀結果。</li></ul>
+<p>目前沒有角色成品或量化品質測試，不對品質、全流程成功率或節省工時評分。本報告的成果是可重現的安裝紀錄與具體排查經驗；成品測試需另補證據。</p></section>
+<section id="sources" class="article-section"><span class="section-num">08 / SOURCES</span><h2>資料來源與紀錄範圍</h2>
+<ol><li><a href="https://github.com/nanocle/Charakuru/blob/main/README.zh-CN.md">Charakuru 官方 README（簡體中文）</a>：用途、環境與入口說明。</li><li><a href="https://github.com/nanocle/Charakuru/blob/main/docs/tutorial.zh-CN.md">Charakuru 官方使用教程（簡體中文）</a>：操作與確認點；並參照本機 1.1.1 配布套件的 AGENTS.md、docs/tutorial.zh-CN.md、package.json 與 scripts/mtoon-export.py。</li><li><a href="https://github.com/saturday06/VRM-Addon-for-Blender/releases/tag/v4.10.4">VRM Add-on 官方 v4.10.4 Release</a>：Extension ZIP 來源；兼容性依包內 blender_manifest.toml 核對。</li><li><a href="https://learn.chatgpt.com/docs/browser">OpenAI 內置瀏覽器說明</a>與<a href="https://learn.chatgpt.com/docs/chrome-extension">官方瀏覽器擴展設定</a>。</li><li>2026-11-05 本次操作紀錄：版本輸出、安裝回傳、HTTP 測試、頁面讀取、Blender 面板觀察及 TCP 測試。紀錄反映當次狀態，不是持續監控。</li></ol>
+<p>報告不附完整聊天、帳戶資訊或私人素材。官方文件與介面可能更新，復現時應記下當次版本並閱讀該版套件指示。使用與再散布條件以<a href="https://github.com/nanocle/Charakuru/blob/main/LICENSE">官方 LICENSE</a>為準。</p></section>
+</div></main><footer class="site-footer"><span>公開研究資料庫 · REPORT 003</span><a href="../">返回研究目錄 ↑</a></footer></body></html>
