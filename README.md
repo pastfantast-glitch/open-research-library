@@ -38,3 +38,14 @@
 - 圖片：`assets/head-retopology/`
 - 專用樣式／互動：`topology-report.css`、`topology-report.js`
 - 圖片由研究者 Blender 場景中的模型重繪；V04 採最後完成的 3,182 面狀態。
+
+## 第四份報告
+
+《Tripo Agentic Canvas 角色分件生成與組裝實測》整理 2026-11-24 的單張設定圖、元素提取、七項 Smart Mesh／UV／紋理、三版組裝預覽與費用。區分截圖觀察、平台回報與使用者估算；不將未驗證的 UV 修復或資產品質寫成成功。
+
+- 報告：`reports/tripo-agentic-canvas-character.html`
+- 圖片與可下載提示詞：`assets/tripo-agentic-canvas/`
+- 53 張截圖的尺寸與 SHA256：`assets/tripo-agentic-canvas/evidence-manifest.json`
+- 專用樣式／互動：`agentic-report.css`、`agentic-report.js`
+- 延用 `image-lightbox.js`；無外部相依；首頁保留直接顯示報告列表。
+- 費用約 1,139 點為研究者餘額估算；980 點為當前節點價格試算，兩者不得相加。

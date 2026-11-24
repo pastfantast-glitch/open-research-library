@@ -1,0 +1,540 @@
+{
+  "report": "Tripo Agentic Canvas 角色分件生成與組裝實測",
+  "date": "2026-11-24",
+  "unique_screenshots": 53,
+  "additional_reference": "character-reference.png",
+  "duplicate_note": "兩張長袖與肩甲 UV 截圖 SHA256 相同，僅收錄一份。",
+  "numbering": "E 編號沿用素材收錄序號，非操作時間；正文按實際流程排列。",
+  "images": [
+    {
+      "evidence_id": "E01",
+      "title": "Agentic Canvas 起始頁面",
+      "file": "fig01_agentic_canvas_start.png",
+      "width": 1528,
+      "height": 824,
+      "sha256": "b141ae241a866922d9b4020513a5f2e657bb2e490bd516e6cec6dfc98caabe22",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E02",
+      "title": "角色分件生成與組裝提示詞",
+      "file": "fig02_character_workflow_prompt.png",
+      "width": 778,
+      "height": 833,
+      "sha256": "f4158abc55df0383426cbffbbbc8079f2e7c5b9f836c90fa57187de3d22a25c4",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E03",
+      "title": "參考圖與提示詞置入 Tripo 對話框",
+      "file": "fig03_tripo_prompt_input.png",
+      "width": 401,
+      "height": 820,
+      "sha256": "79d8f3ef98ae10d8e3c3402b7663dc7fbaf8a7e3e653d8233f82fa848cc41898",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E04",
+      "title": "Tripo 回覆分件與組裝規劃",
+      "file": "fig04_tripo_component_plan.png",
+      "width": 392,
+      "height": 219,
+      "sha256": "7c09f62761cbc74e00f6d59a17d7de3e3132d371340e036fea5ba4a3324a56d0",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E05",
+      "title": "確認分件計畫後進入規劃階段",
+      "file": "fig05_plan_confirmed.png",
+      "width": 399,
+      "height": 701,
+      "sha256": "e52d2101cb460c9fce13c11a219be1c121131fe7d4e066738a33c6dc092e7847",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E06",
+      "title": "第一次部件清單確認",
+      "file": "fig06_first_component_confirmation.png",
+      "width": 381,
+      "height": 636,
+      "sha256": "3c9bd8cb1231e387ffedd61193d0b7f41776c8702fb73132064b810fb89b3064",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E07",
+      "title": "分件流程執行中",
+      "file": "fig07_component_workflow_running.png",
+      "width": 1449,
+      "height": 889,
+      "sha256": "b649e49a1801b7266001d1dfe7ecf4988461ea5a923aeda743bfe5acf31ee4a7",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E08",
+      "title": "第二次確認——Smart Mesh 生成計畫",
+      "file": "fig08_smart_mesh_plan_confirmation.png",
+      "width": 906,
+      "height": 670,
+      "sha256": "466fe8955c00b86ff97ec9b0cdb543747ff61764f6b22a76096b888da6f7277b",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E09",
+      "title": "確認後執行分件模型生成",
+      "file": "fig09_component_mesh_generation_running.png",
+      "width": 1079,
+      "height": 834,
+      "sha256": "937e3b01b3b85a41579316f5f8e4878f834666343f7a29dc1d21d5680d5f10c0",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E10",
+      "title": "七項模型產出與 UV 展開前確認",
+      "file": "fig10_models_generated_uv_confirmation.png",
+      "width": 1036,
+      "height": 827,
+      "sha256": "3655db8fdf5ecac2bfce494dae934a54702f8960f8c78584d73266a090da41b4",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E11",
+      "title": "UV 展開後、貼圖生成前確認",
+      "file": "fig11_uv_completed_texture_confirmation.png",
+      "width": 1183,
+      "height": 822,
+      "sha256": "4e4b544d3938664a679be3abb094773013758a007664aff73f5efe0e179f28dd",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E12",
+      "title": "頭部與頭髮｜UV 檢視",
+      "file": "fig12_uv_head_hair.png",
+      "width": 1632,
+      "height": 777,
+      "sha256": "559ebd027abeca937b5932d9adf01c1b5e7d28bf01279e93c3ee0ae4f21c8ab3",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E13",
+      "title": "素體｜UV 檢視",
+      "file": "fig13_uv_body.png",
+      "width": 1657,
+      "height": 796,
+      "sha256": "e80f18b389b07b4c8bf1c07ff592a0a0e423b439d253ccf0cbe1ebcf7998bef7",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E14",
+      "title": "外衣｜UV 檢視",
+      "file": "fig14_uv_coat.png",
+      "width": 1652,
+      "height": 782,
+      "sha256": "793b14c0521f62c50c5db914e4c5fc27ddc9605c0d4be63deecff3c5acf1bbb2",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E15",
+      "title": "短褲｜UV 檢視",
+      "file": "fig15_uv_shorts.png",
+      "width": 1685,
+      "height": 801,
+      "sha256": "b45c7f2e4c754c76b1faa4cb2d3db810cb91a8ae0b45a5ac58f5834432ccfb7f",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E16",
+      "title": "雙靴｜UV 檢視",
+      "file": "fig16_uv_boots.png",
+      "width": 1693,
+      "height": 804,
+      "sha256": "5f189e49e2b1c4b87034d906500ee59c83d31c1c3bda9fe7d8c9ca48e94b150f",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E17",
+      "title": "雙手套｜UV 檢視",
+      "file": "fig17_uv_gloves.png",
+      "width": 1647,
+      "height": 800,
+      "sha256": "516e5f0feede82fdac5ec7418057105e4643dabd9f8573c3dc99033db1adf68f",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E18",
+      "title": "長袖與肩甲｜UV 檢視",
+      "file": "fig18_uv_sleeve_pauldron.png",
+      "width": 1658,
+      "height": 799,
+      "sha256": "17d995b64ce33d77ec2a6096fcd9687a3665c6d3e019d328671743e14a14367c",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E19",
+      "title": "頭部與頭髮｜線框結果",
+      "file": "fig19_wireframe_head_hair.png",
+      "width": 804,
+      "height": 634,
+      "sha256": "b7c57d209f3d03b2a24f97bea1c5789ad3cb42a1787f91ffec1d0445e5db6494",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E20",
+      "title": "素體｜線框結果",
+      "file": "fig20_wireframe_body.png",
+      "width": 962,
+      "height": 693,
+      "sha256": "f47df441a37306f98f85064d6853fb865ab205ad3780280613ff4a75d3542fb3",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E21",
+      "title": "外衣｜線框結果",
+      "file": "fig21_wireframe_coat.png",
+      "width": 751,
+      "height": 645,
+      "sha256": "e4094a3e4a2c74b54af03541450fc3bb4f5fe61da1b21e14181c8d2a067f33ac",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E22",
+      "title": "短褲｜線框結果",
+      "file": "fig22_wireframe_shorts.png",
+      "width": 858,
+      "height": 619,
+      "sha256": "65e79f6594c8e1d84dbba26d81b665deb071258e572a2cbc195860cdb708646c",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E23",
+      "title": "雙靴｜線框結果",
+      "file": "fig23_wireframe_boots.png",
+      "width": 815,
+      "height": 609,
+      "sha256": "134f689bc442266b117e17f58c9e54a74629930297579586feb2f200e824d98b",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E24",
+      "title": "雙手套｜線框結果",
+      "file": "fig24_wireframe_gloves.png",
+      "width": 833,
+      "height": 543,
+      "sha256": "74fbb984a4053409edf9b89a304cfc69c50523111df5e9dfe693a354cbb74136",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E25",
+      "title": "長袖與肩甲｜線框結果",
+      "file": "fig25_wireframe_sleeve_pauldron.png",
+      "width": 865,
+      "height": 500,
+      "sha256": "6d15eb2814c5c41d5b4df8704e6e1cb1991ba7b9a257af34a8b435b6c86a0e15",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E26",
+      "title": "貼圖生成前的計畫確認",
+      "file": "fig26_texture_generation_plan.png",
+      "width": 1182,
+      "height": 803,
+      "sha256": "5b7a1a398931b1e944b3ff13d9bbfcc7566251df7e3c7d26fe7339c4c391ab7e",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E27",
+      "title": "紋理生成完成與 AI 3D Lab 交接",
+      "file": "fig27_textures_generated_lab_handoff.png",
+      "width": 1336,
+      "height": 820,
+      "sha256": "f1d95a8919a24308eda76ff1cb796944de2c0fa4cba3982782681785e9d64968",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E28",
+      "title": "頭部與頭髮｜紋理結果",
+      "file": "fig28_textured_head_hair.png",
+      "width": 813,
+      "height": 621,
+      "sha256": "1f4f679d5af9792041a4ea1aab56a0c1176e4e72883475cf849e2895673a0027",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E29",
+      "title": "素體｜紋理結果",
+      "file": "fig29_textured_body.png",
+      "width": 590,
+      "height": 650,
+      "sha256": "0d96b5e66a793c5ffc8bf41fa24abb560287e67c3874190a2667562cbac5671c",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E30",
+      "title": "外衣｜紋理結果",
+      "file": "fig30_textured_coat.png",
+      "width": 730,
+      "height": 640,
+      "sha256": "6a2e34d4833b47056dbbc428adfdabb98bb18088129f71020c2a18806d82ed00",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E31",
+      "title": "短褲｜紋理結果",
+      "file": "fig31_textured_shorts.png",
+      "width": 847,
+      "height": 629,
+      "sha256": "200149cc4c905c023e25f8aa53c842e5116f88caf2603c92646ec758d8e03edc",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E32",
+      "title": "雙靴｜紋理結果",
+      "file": "fig32_textured_boots.png",
+      "width": 840,
+      "height": 632,
+      "sha256": "7bf0350d93f561c438f2cc2e705a0ee12f423fe59181979887ecc2a7531e6763",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E33",
+      "title": "雙手套｜紋理結果",
+      "file": "fig33_textured_gloves.png",
+      "width": 901,
+      "height": 533,
+      "sha256": "dd8a74746b5f64f05efde2d591d282b64340a3bda93ee90bea486ab7f5f1da00",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E34",
+      "title": "長袖與肩甲｜紋理結果",
+      "file": "fig34_textured_sleeve_pauldron.png",
+      "width": 946,
+      "height": 502,
+      "sha256": "5d5f0d80508298fdb30abf3215a27d3ab6fe1cfeef317308468818c9c14a3bc1",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E35",
+      "title": "AI 3D Lab 對位組裝執行中",
+      "file": "fig35_ai3dlab_assembly_running.png",
+      "width": 953,
+      "height": 843,
+      "sha256": "4f9bd8e3552c7639a9ee318dba6e05f4c28b73a2606ab69d28c183cfb43831ab",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E36",
+      "title": "AI 3D Lab 確認組裝基準",
+      "file": "fig36_ai3dlab_assembly_reference_confirmation.png",
+      "width": 653,
+      "height": 771,
+      "sha256": "a0c728a3adcc7bb84b6b1c471e4bc4204a94cb1891582fe6a0ddbd96c193c83a",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E37",
+      "title": "第一次組裝結果（正面）",
+      "file": "fig37_first_assembly_front.png",
+      "width": 593,
+      "height": 599,
+      "sha256": "e81f02552ffad042f063e376f18fbf41306fe9f101c60661332c7356ec28dadf",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E38",
+      "title": "組裝偏差回報與 Lab 說明",
+      "file": "fig38_assembly_feedback_lab_acknowledgment.png",
+      "width": 445,
+      "height": 563,
+      "sha256": "f481f835bf64dd1aa15ae491fa6524c0793cd2a9334f39d73f5b85ade558c852",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E39",
+      "title": "第二次組裝結果（正面）",
+      "file": "fig39_second_assembly_front.png",
+      "width": 680,
+      "height": 658,
+      "sha256": "faa12b38a10c2ca5fba418b9dca25b9c8c7203d05444f5a49fa2e044d32e9d60",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E40",
+      "title": "第三次組裝結果（正面）",
+      "file": "fig40_third_assembly_front.png",
+      "width": 634,
+      "height": 633,
+      "sha256": "dae14c5e0eb020c3e8747e5f26eb2d8f4aac30f72db80c0d87ae47df18ea7229",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E41",
+      "title": "角色生成與組裝流程總覽",
+      "file": "fig41_generation_assembly_graph.png",
+      "width": 1132,
+      "height": 813,
+      "sha256": "11c674ccfba3e19cb8690f1b37ebc7027c6d9cd071b04f8c928cf7b65d49fdc5",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E42",
+      "title": "頭部與頭髮｜分件參考",
+      "file": "fig42_part_reference_head_hair.png",
+      "width": 305,
+      "height": 311,
+      "sha256": "6ef462150ff7afbf498df9af5356afc226c33dbad1293706dad7db51aa655333",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E43",
+      "title": "素體｜分件參考",
+      "file": "fig43_part_reference_body.png",
+      "width": 329,
+      "height": 351,
+      "sha256": "9af2c857a1fe2713d295b1cb8dd59cea7d611958ad8737e317805a22d8452bd1",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E44",
+      "title": "外衣｜分件參考",
+      "file": "fig44_part_reference_coat.png",
+      "width": 335,
+      "height": 343,
+      "sha256": "1ae9449098074f0d33adecc9469e9ca654d6864e2681ed2c30c93eeb9770f039",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E45",
+      "title": "短褲｜分件參考",
+      "file": "fig45_part_reference_shorts.png",
+      "width": 336,
+      "height": 344,
+      "sha256": "162a04eed25f9798d4a0105a59731bafc6da758c4285aa067133128caba778f2",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E46",
+      "title": "雙靴｜分件參考",
+      "file": "fig46_part_reference_boots.png",
+      "width": 324,
+      "height": 338,
+      "sha256": "cfcd7de2f30b3cd0872c6681cccccc31d4481b7d7ef69d21a46c7a505f44b2ba",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E47",
+      "title": "雙手套｜分件參考",
+      "file": "fig47_part_reference_gloves.png",
+      "width": 347,
+      "height": 336,
+      "sha256": "853eeede98b2ddd98dd86e8ae6a1751937a19d8e97d7a04249940374bf337401",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E48",
+      "title": "長袖與肩甲｜分件參考",
+      "file": "fig48_part_reference_sleeve_pauldron.png",
+      "width": 348,
+      "height": 318,
+      "sha256": "be7f096bae5d45c12175eccd1289c490da805f26901f5181cc8de06577fb4b0d",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E49",
+      "title": "元素提取節點",
+      "file": "fig49_element_extraction_node.png",
+      "width": 545,
+      "height": 581,
+      "sha256": "512393152711f66712efa7376ec136a57633bfa40b001c4b77ae56a97e4246ce",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E50",
+      "title": "Smart Mesh 費用與設定",
+      "file": "fig50_smart_mesh_node_cost.png",
+      "width": 384,
+      "height": 733,
+      "sha256": "71a664ad978038b1cf28c95265fb20ce9e9dfca1128e2279a3a1a47c2eb731d6",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E51",
+      "title": "智能 UV 費用",
+      "file": "fig51_smart_uv_node_cost.png",
+      "width": 289,
+      "height": 356,
+      "sha256": "466024f618ffbeab1b443d4b838267551e4027a46d0c8679183d54bc27efe9a9",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E52",
+      "title": "紋理費用與 4K 設定",
+      "file": "fig52_texture_node_cost.png",
+      "width": 308,
+      "height": 602,
+      "sha256": "5a853e08c1b10fc34ad4593968382c7e51b6703a9a410232e32f7fd6fe3fd91b",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E53",
+      "title": "元素提取費用",
+      "file": "fig53_element_extraction_node_cost.png",
+      "width": 258,
+      "height": 720,
+      "sha256": "524b6978672bbb872a338a3dec7caa2b5a999988e8f06c8a5bfa0b27366df540",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-24"
+    }
+  ]
+}
