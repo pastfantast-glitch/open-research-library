@@ -27,3 +27,5 @@
 
 .canvas-input-pair{grid-template-columns:2fr 1fr;align-items:start}.canvas-input-pair .image{height:420px}
 @media(max-width:650px){.canvas-input-pair{grid-template-columns:1fr}.canvas-input-pair .image{height:auto}.canvas-input-pair .image img{height:auto;max-height:500px}}
+.reference-prompt-pair{align-items:start}.reference-prompt-pair .image{height:480px}
+@media(max-width:650px){.reference-prompt-pair .image{height:auto}.reference-prompt-pair .image img{height:auto;max-height:500px}}
