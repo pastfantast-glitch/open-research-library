@@ -16,3 +16,11 @@
 .uv-outputs{grid-template-columns:repeat(2,minmax(0,1fr))}.uv-outputs .image{height:300px}
 @media(max-width:1000px){.stage-outputs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.stage-outputs,.uv-outputs{grid-template-columns:1fr}.process-shot .image{height:420px}.assembly-step .image{height:460px}.stage-outputs .image{height:300px}.uv-outputs .image{height:auto}.uv-outputs .image img{height:auto}}
+
+.agentic-report .workflow-step{margin-top:40px;padding-top:30px;border-top:1px solid var(--b8-border);scroll-margin-top:24px}
+.agentic-report .workflow-step>h3{margin-top:0;color:var(--b8-accent);font-size:26px}
+.step-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:24px 0}
+.step-nav a{display:block;padding:12px 14px;background:var(--b8-inset);border:1px solid var(--b8-border);border-radius:8px;text-decoration:none}
+.step-nav a:hover{background:var(--b8-panel-raised)}
+@media(max-width:650px){.step-nav{grid-template-columns:1fr}.agentic-report .workflow-step>h3{font-size:22px}}
+@media print{.step-nav{display:none}}
