@@ -1,7 +1,7 @@
 {
   "report": "Tripo Agentic Canvas 角色分件生成與組裝實測",
   "date": "2026-11-24",
-  "unique_screenshots": 53,
+  "unique_screenshots": 54,
   "additional_reference": "character-reference.png",
   "duplicate_note": "兩張長袖與肩甲 UV 截圖 SHA256 相同，僅收錄一份。",
   "numbering": "E 編號沿用素材收錄序號，非操作時間；正文按實際流程排列。",
@@ -535,6 +535,16 @@
       "sha256": "524b6978672bbb872a338a3dec7caa2b5a999988e8f06c8a5bfa0b27366df540",
       "source": "研究者提供的原始操作截圖",
       "record_date": "2026-11-24"
+    },
+    {
+      "evidence_id": "E54",
+      "title": "開啟時的空白畫布（補充畫面）",
+      "file": "fig54_blank_canvas.png",
+      "width": 1898,
+      "height": 895,
+      "sha256": "f787e5a22ec20edeb20c985edaf4ddaf11ee3b1b278e6db3cc12f7e84992f42b",
+      "source": "研究者提供的原始操作截圖",
+      "record_date": "2026-11-25"
     }
   ]
 }
