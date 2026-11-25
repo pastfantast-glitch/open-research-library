@@ -78,13 +78,13 @@
     },
     {
       "evidence_id": "E09",
-      "title": "確認後執行分件模型生成",
-      "file": "fig09_component_mesh_generation_running.png",
-      "width": 1079,
-      "height": 834,
-      "sha256": "937e3b01b3b85a41579316f5f8e4878f834666343f7a29dc1d21d5680d5f10c0",
+      "title": "分件模型生成完成的畫布",
+      "file": "fig09_component_meshes_completed.png",
+      "width": 651,
+      "height": 872,
+      "sha256": "447468493fcbaef3632ad5e83c209eb303636a61ae2f54c1ee169344a06fdb55",
       "source": "研究者提供的原始操作截圖",
-      "record_date": "2026-11-24"
+      "record_date": "2026-11-25"
     },
     {
       "evidence_id": "E10",
