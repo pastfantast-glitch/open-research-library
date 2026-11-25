@@ -68,13 +68,13 @@
     },
     {
       "evidence_id": "E07",
-      "title": "分件流程執行中",
-      "file": "fig07_component_workflow_running.png",
-      "width": 1449,
-      "height": 889,
-      "sha256": "b649e49a1801b7266001d1dfe7ecf4988461ea5a923aeda743bfe5acf31ee4a7",
+      "title": "分件參考生成完成",
+      "file": "fig07_component_references_completed.png",
+      "width": 518,
+      "height": 830,
+      "sha256": "57941460b36d015c960b695dd2235b5d3dad2df690939b3e67791bf48a75874d",
       "source": "研究者提供的原始操作截圖",
-      "record_date": "2026-11-24"
+      "record_date": "2026-11-25"
     },
     {
       "evidence_id": "E08",
