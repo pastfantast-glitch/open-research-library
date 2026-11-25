@@ -29,4 +29,4 @@
 @media(max-width:650px){.canvas-input-pair{grid-template-columns:1fr}.canvas-input-pair .image{height:auto}.canvas-input-pair .image img{height:auto;max-height:500px}}
 .reference-prompt-pair{align-items:start}.reference-prompt-pair .image{height:480px}
 @media(max-width:650px){.reference-prompt-pair .image{height:auto}.reference-prompt-pair .image img{height:auto;max-height:500px}}
-.agentic-report #method>p{max-width:none}
+.agentic-report .report-deck,.agentic-report .article-section>p,.agentic-report .article-section>ul{max-width:none}
