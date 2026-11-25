@@ -1,7 +1,7 @@
 {
   "report": "Tripo Agentic Canvas 角色分件生成與組裝實測",
   "date": "2026-11-24",
-  "unique_screenshots": 54,
+  "unique_screenshots": 53,
   "additional_reference": "character-reference.png",
   "duplicate_note": "兩張長袖與肩甲 UV 截圖 SHA256 相同，僅收錄一份。",
   "numbering": "E 編號沿用素材收錄序號，非操作時間；正文按實際流程排列。",
@@ -333,16 +333,6 @@
       "width": 946,
       "height": 502,
       "sha256": "5d5f0d80508298fdb30abf3215a27d3ab6fe1cfeef317308468818c9c14a3bc1",
-      "source": "研究者提供的原始操作截圖",
-      "record_date": "2026-11-24"
-    },
-    {
-      "evidence_id": "E35",
-      "title": "AI 3D Lab 對位組裝執行中",
-      "file": "fig35_ai3dlab_assembly_running.png",
-      "width": 953,
-      "height": 843,
-      "sha256": "4f9bd8e3552c7639a9ee318dba6e05f4c28b73a2606ab69d28c183cfb43831ab",
       "source": "研究者提供的原始操作截圖",
       "record_date": "2026-11-24"
     },
