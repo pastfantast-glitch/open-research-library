@@ -32,3 +32,12 @@
 .agentic-report .report-deck,.agentic-report .article-section>p,.agentic-report .article-section>ul{max-width:none}
 
 .agentic-report #conclusion .recommendations>li>strong:first-child{color:var(--b8-accent)}
+
+.agentic-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(24px,3vw,44px);align-items:center}
+.agentic-hero-art{overflow:hidden;border-radius:12px;background:#080a0b}
+.agentic-hero-art img{display:block;width:100%;height:auto;object-fit:contain}
+.agentic-hero-copy{min-width:0}
+.agentic-report .agentic-hero h1{font-size:clamp(30px,3.1vw,44px);line-height:1.3;margin:18px 0}
+.agentic-report .agentic-hero .report-deck{font-size:17px;margin-bottom:0}
+.agentic-report .agentic-hero .byline{gap:8px 18px;margin-top:22px}
+@media(max-width:900px){.agentic-hero{grid-template-columns:1fr}.agentic-hero-art{max-width:600px;width:100%;margin:auto}.agentic-report .agentic-hero h1{font-size:clamp(30px,5vw,42px)}}
